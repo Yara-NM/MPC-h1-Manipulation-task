@@ -3,7 +3,7 @@
 
 
 ## Two-Layer Model Predictive Control for Unitree H1 Arm Control
-This document describes the two-layer Model Predictive Control (MPC) formulation for controlling the Unitree H1 robot's arms. The architecture consists of a ${Trajectory MPC}$ layer, which generates optimal end-effector trajectories, and a $Kinematics MPC$ layer, which computes joint angles to track these trajectories. The formulation is implemented in \texttt{h1\_two\_layer\_mpc.py}.
+This document describes the two-layer Model Predictive Control (MPC) formulation for controlling the Unitree H1 robot's arms. The architecture consists of a ${Trajectory MPC}$ layer, which generates optimal end-effector trajectories, and a $Kinematics MPC$ layer, which computes joint angles to track these trajectories. The formulation is implemented in h1_two_layer_mpc.py.
 
 <p align="center">
   <img src="./img/Implementation%20of%20MPC.svg" alt="Implementation of MPC" width="600"/>
@@ -21,7 +21,7 @@ Optimizes left and right end-effector positions $P_l$, $P_r \in R^3$ over a hori
 
 Computes joint angles $q \in R^8$ for the 8 arm joints over a horizon $N_{kin} = 5$ with timestep $dt_{kin} = 0.02 s$. It tracks the trajectory while enforcing joint limits, velocity constraints, and regularization.
 
-The robot model is fixed-base with $n_q = 19$ degrees of freedom (DOF), but a reduced model $n_q^{red} = 8$ is used for MPC. End-effectors are at frames \texttt{left\_elbow\_link} and \texttt{right\_elbow\_link}.
+The robot model is fixed-base with $n_q = 19$ degrees of freedom (DOF), but a reduced model $n_q^{red} = 8$ is used for MPC. End-effectors are at frames \texttt{left\_elbow\_link} and right_elbow_link.
 
 ### Trajectory MPC formulation
 
@@ -40,7 +40,7 @@ $P_g^l, P_g^r \in R^3$: Left/right goal positions.
 
 $w_t = 100$: Weight for position error.
 
-$w_s = 0.1$: Weight for smoothness (for $k \geq 1$.
+$w_s = 0.1$: Weight for smoothness (for $k \geq 1$).
 
 $w_f = 1000$: Weight for terminal error.
 
@@ -56,7 +56,7 @@ $P_{init}^l, P_{init}^r \in R^3$ are initial positions.
 
 $\textbf{Obstacle Avoidance}$:
 
-$$||P_l[k] - P_o||^2 \geq (r_o + d_{min})^2, \quad ||P_r[k] - P_o||^2 \geq (r_o + d_{\text{min}})^2, \quad \forall k$$
+$$||P_l[k] - P_o||^2 \geq (r_o + d_{min})^2, \quad ||P_r[k] - P_o||^2 \geq (r_o + d_{min})^2, \quad \forall k$$
 
 
 where:
@@ -74,7 +74,7 @@ $c_{arm}^l = ([0, 0.2, 0.05]^\top\), \(c_{arm}^r = [0, -0.2, 0.5]^\top\)$ are sh
 The Kinematics MPC computes joint angles to track the trajectory from the Trajectory MPC.
 
 ### Cost function for Kinematics MPC
-The cost function \( J_{\text{kin}} \) is:
+The cost function  $J_{\text{kin}}$ is:
 
 $$J_{kin} = \sum_{k=0}^{N_{kin}-1} \left[ w_p \left( ||FK_l(q[k]) - P_{traj}^l[k]||^2 + ||FK_r(q[k]) - P_{traj}^r[k]||^2 \right) + w_q ||q[k] - q[k-1]||^2 + w_r ||q[k]||^2 \right]$$
 
@@ -97,7 +97,7 @@ $w_r = 0.02$: Weight for regularization.
 
 $\textbf{Initial Condition}$:
 
-$$q[0] = q_{init}$$
+$q[0] = q_{init}$
 
 where $q_{init} \in R^8$ are initial joint angles (mapped from full model $q \in R^{19}$.
 
