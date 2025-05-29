@@ -6,7 +6,7 @@
 This document describes the two-layer Model Predictive Control (MPC) formulation for controlling the Unitree H1 robot's arms. The architecture consists of a ${Trajectory MPC}$ layer, which generates optimal end-effector trajectories, and a $Kinematics MPC$ layer, which computes joint angles to track these trajectories. The formulation is implemented in \texttt{h1\_two\_layer\_mpc.py}.
 
 <p align="center">
-  <img src="./Implementation%20of%20MPC.svg" alt="Implementation of MPC" width="600"/>
+  <img src="./img/Implementation%20of%20MPC.svg" alt="Implementation of MPC" width="600"/>
 </p>
 
 
