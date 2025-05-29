@@ -5,7 +5,9 @@
 ## Two-Layer Model Predictive Control for Unitree H1 Arm Control
 This document describes the two-layer Model Predictive Control (MPC) formulation for controlling the Unitree H1 robot's arms. The architecture consists of a ${Trajectory MPC}$ layer, which generates optimal end-effector trajectories, and a $Kinematics MPC$ layer, which computes joint angles to track these trajectories. The formulation is implemented in \texttt{h1\_two\_layer\_mpc.py}.
 
-![Implementation of MPC](./Implementation%20of%20MPC.svg)
+<p align="center">
+  <img src="./Implementation%20of%20MPC.svg" alt="Implementation of MPC" width="600"/>
+</p>
 
 
 ### Description of the two-layer architecture
@@ -118,3 +120,9 @@ $\texttt{left/right shoulder pitch/roll/yaw joint}$, and $\texttt{left/right elb
 
 Joint angles are mapped to MuJoCo names $\texttt{Left/RightShoulderPitch}$, etc.) for compatibility with $\texttt{remap ik joints to motor}$.
 Both MPC problems are solved using CasADi with the IPOPT solver.
+
+<p align="center">
+  <img src="./code.svg" alt="Code Diagram" width="600"/>
+</p>
+
+
