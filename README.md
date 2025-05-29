@@ -122,7 +122,7 @@ Joint angles are mapped to MuJoCo names Left_RightShoulderPitch, etc.) for compa
 Both MPC problems are solved using CasADi with the IPOPT solver.
 
 <p align="center">
-  <img src="./code.svg" alt="Code Diagram" width="600"/>
+  <img src="./img/code.svg" alt="Code Diagram" width="600"/>
 </p>
 
 <p align="center">
