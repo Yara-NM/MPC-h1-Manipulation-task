@@ -114,11 +114,11 @@ $$-\dot{q_{max}} \leq \frac{q[k] - q[k-1]}{dt_{kin}} \leq \dot{q}_{max}, \quad \
 where: $\dot{q_{max}} = \pi . 1_8$, and $dt_{kin} = 0.02 s$
 
 ### Implementation notes
-The robot model is loaded from a URDF (\texttt{h1.urdf}) with \( *n*<sub>q</sub> = 19 \). A reduced model (*n*<sub>q</sub> = 8) includes 8 arm joints: 
+The robot model is loaded from a URDF h1.urdf with \( *n*<sub>q</sub> = 19 \). A reduced model (*n*<sub>q</sub> = 8) includes 8 arm joints: 
 
-$\texttt{left/right shoulder pitch/roll/yaw joint}$, and $\texttt{left/right elbow joint}$.
+left/right shoulder pitch/roll/yaw joint, and left/right elbow_joint.
 
-Joint angles are mapped to MuJoCo names $\texttt{Left/RightShoulderPitch}$, etc.) for compatibility with $\texttt{remap ik joints to motor}$.
+Joint angles are mapped to MuJoCo names Left_RightShoulderPitch, etc.) for compatibility with remap ik joints to motor.
 Both MPC problems are solved using CasADi with the IPOPT solver.
 
 <p align="center">
