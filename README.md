@@ -125,4 +125,9 @@ Both MPC problems are solved using CasADi with the IPOPT solver.
   <img src="./code.svg" alt="Code Diagram" width="600"/>
 </p>
 
+<p align="center">
+  <img src="./img/image.png" alt="MPC Diagram" width="600"/>
+</p>
+
+
 
