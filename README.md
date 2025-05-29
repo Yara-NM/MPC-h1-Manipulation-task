@@ -114,7 +114,7 @@ $$-\dot{q_{max}} \leq \frac{q[k] - q[k-1]}{dt_{kin}} \leq \dot{q}_{max}, \quad \
 where: $\dot{q_{max}} = \pi . 1_8$, and $dt_{kin} = 0.02 s$
 
 ### Implementation notes
-The robot model is loaded from a URDF (\texttt{h1.urdf}) with \( n_q = 19 \). A reduced model (\( n_q^{\text{red}} = 8 \)) includes 8 arm joints: 
+The robot model is loaded from a URDF (\texttt{h1.urdf}) with \( *n*<sub>q</sub> = 19 \). A reduced model (*n*<sub>q</sub> = 8) includes 8 arm joints: 
 
 $\texttt{left/right shoulder pitch/roll/yaw joint}$, and $\texttt{left/right elbow joint}$.
 
